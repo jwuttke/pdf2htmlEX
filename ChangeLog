@@ -9,6 +9,7 @@
   #444 won't compile
   #446 won't compile
   #493 not clear this is the right way to deal with illegal Unicode
+  #505 adding GUI similar to pdf.js: navigation didn't work; interfers too deeply
   #655 compression of old PNG's would interfer with #693
 
 v0.14.6
