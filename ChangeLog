@@ -1,10 +1,11 @@
 
 * Processed pull requests #444-683 from nov14 to sep16:
-  #693: Reactivated ctest in simplified form
-  #444 rejected (won't compile)
-  #446 rejected (won't compile)
-  #493 rejected (not clear this is the right way to deal with illegal Unicode)
-
+  #693 reactivate ctest in simplified form
+  #555 fix windows path issue
+* Rejected the following old pull requests:
+  #444 won't compile
+  #446 won't compile
+  #493 not clear this is the right way to deal with illegal Unicode
 
 v0.14.6
 2015.07.22
