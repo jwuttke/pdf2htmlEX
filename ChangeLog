@@ -8,6 +8,7 @@
   #444 won't compile
   #446 won't compile
   #493 not clear this is the right way to deal with illegal Unicode
+  #655 compression of old PNG's would interfer with #693
 
 v0.14.6
 2015.07.22
