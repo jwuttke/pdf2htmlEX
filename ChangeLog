@@ -4,6 +4,7 @@
   #555 fix windows path issue
   #632 don't catch Ctrl+PgDown/Up
   #651 enable pipe processing
+  #682 more explicit, and uniform, messages for throw statements
 * Rejected the following old pull requests:
   #444 won't compile
   #446 won't compile
