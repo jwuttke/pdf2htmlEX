@@ -3,6 +3,7 @@
   #693 reactivate ctest in simplified form
   #555 fix windows path issue
   #632 don't catch Ctrl+PgDown/Up
+  #651 enable pipe processing
 * Rejected the following old pull requests:
   #444 won't compile
   #446 won't compile
