@@ -1,3 +1,5 @@
+* Reactivated ctest in simplified form (pull request #683)
+
 v0.14.6
 2015.07.22
 
@@ -19,7 +21,7 @@ v0.13.6
 v0.12
 2014.07.24
 
-* Recognize and hide covered text 
+* Recognize and hide covered text
 * Proof mode that allows easy comparison of HTML and PDF
 * Do not support Fontforge < 2.0.0 any more
 * Output is now XHTML
@@ -93,9 +95,9 @@ v0.9
 v0.8
 2013.05.05
 
-* HTML optimization 
+* HTML optimization
  - reduce number of <span> elements
- - merge lines with different y values 
+ - merge lines with different y values
  - merge lines with different (but proportional) transform matrices
 * Custom format for page file name
 * Workaround for NBSP
@@ -105,14 +107,14 @@ v0.8
  - missing glyphs in TTF fonts
  - unexpected vertical shifts
  - whitespace lost in IE
-* New UI style 
+* New UI style
 * New options:
  --optimize-text : HTML optimization, see above
  --fallback : the most accurate way, but costly (larger file sizes)
  --printing : enable or disable CSS for printing
  --page-file: specify page filenames when split-pages is on
 * Deprecated options:
- --embed-base-font 
+ --embed-base-font
 * New default values:
  --embed-external-font 1
  --space-as-offset 0
@@ -130,11 +132,11 @@ v0.7
 v0.6
 2013.01.26
 
-* new option --no-drm 
-* Travis CI integration 
+* new option --no-drm
+* Travis CI integration
 * Add a class for 'left'
 * Fixed a bug of hashing/finding GfxRGB
-* new option -v, --version 
+* new option -v, --version
 * Render Type 3 fonts as image
 * New parameter: --use-cropbox
 * Progress indicator
@@ -146,7 +148,7 @@ v0.5
 
 * New option: --remove-unused-glyph
 * New options: --stretch-narrow-glyph, --squeeze-wide-glyph
-* Fixed glyph width adjusting 
+* Fixed glyph width adjusting
 * Fixed a memory issue
 * Working on css-draw
 * Working on integrating background-renderer, preparing for svg renderer in the future
@@ -186,7 +188,7 @@ v0.2
 * Better accuracy of rendering, with a new line model
 * New option --decompose-ligature
 
-v0.1 
+v0.1
 2012.08.28
 
-* The first release 
+* The first release
