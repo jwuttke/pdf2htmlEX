@@ -36,6 +36,8 @@
 # PDF specific CSS styles - Do not modify
 $css
 
+@mktree.js
+@mktree.css
 
 #############
 # UI stuffs, optional

@@ -55,7 +55,7 @@ struct HTMLRenderer : OutputDev
     ////////////////////////////////////////////////////
     // OutputDev interface
     ////////////////////////////////////////////////////
-    
+
     // Does this device use upside-down coordinates?
     // (Upside-down means (0,0) is the top left corner of the page.)
     virtual GBool upsideDown() { return gFalse; }
@@ -125,7 +125,7 @@ struct HTMLRenderer : OutputDev
     virtual void clip(GfxState * state);
     virtual void eoClip(GfxState * state);
     virtual void clipToStrokePath(GfxState * state);
-    
+
     virtual void drawString(GfxState * state, GooString * s);
 
     virtual void drawImage(GfxState * state, Object * ref, Stream * str, int width, int height, GfxImageColorMap * colorMap, GBool interpolate, int *maskColors, GBool inlineImg);
@@ -139,7 +139,7 @@ struct HTMLRenderer : OutputDev
                        GfxImageColorMap *maskColorMap,
                        GBool maskInterpolate);
 
-    virtual void stroke(GfxState *state); 
+    virtual void stroke(GfxState *state);
     virtual void fill(GfxState *state);
     virtual void eoFill(GfxState *state);
     virtual GBool axialShadedFill(GfxState *state, GfxAxialShading *shading, double tMin, double tMax);
@@ -163,10 +163,10 @@ protected:
     void post_process(void);
 
     void process_outline(void);
-    void process_outline_items(GooList * items);
+    void process_outline_items(GooList * items, bool toplevel);
 
     void process_form(std::ofstream & out);
-    
+
     void set_stream_flags (std::ostream & out);
 
     void dump_css(void);
@@ -204,7 +204,7 @@ protected:
     void embed_file(std::ostream & out, const std::string & path, const std::string & type, bool copy);
 
     ////////////////////////////////////////////////////
-    // state tracking 
+    // state tracking
     ////////////////////////////////////////////////////
     // reset all states
     void reset_state();
@@ -220,7 +220,7 @@ protected:
     ////////////////////////////////////////////////////
     // PDF stuffs
     ////////////////////////////////////////////////////
-    
+
     XRef * xref;
     PDFDoc * cur_doc;
     Catalog * cur_catalog;
@@ -262,7 +262,7 @@ protected:
     bool ctm_changed;
     bool rise_changed;
     bool font_changed;
-    bool text_pos_changed; 
+    bool text_pos_changed;
     bool text_mat_changed;
     bool fill_color_changed;
     bool hori_scale_changed;
@@ -278,15 +278,15 @@ protected:
     // optimize for web
     // we try to render the final font size directly
     // to reduce the effect of ctm as much as possible
-    
-    // the actual tm used is `real tm in PDF` scaled by 1/draw_text_scale, 
+
+    // the actual tm used is `real tm in PDF` scaled by 1/draw_text_scale,
     // so everything rendered should be multiplied by draw_text_scale
-    double draw_text_scale; 
+    double draw_text_scale;
 
     // the position of next char, in text coords
     // this is actual position (in HTML), which might be different from cur_tx/ty (in PDF)
     // also keep in mind that they are not the final position, as they will be transform by CTM (also true for cur_tx/ty)
-    double draw_tx, draw_ty; 
+    double draw_tx, draw_ty;
 
 
     ////////////////////////////////////////////////////
@@ -304,13 +304,13 @@ protected:
     enum NewLineState
     {
         NLS_NONE,
-        NLS_NEWSTATE, 
+        NLS_NEWSTATE,
         NLS_NEWLINE,
         NLS_NEWCLIP
     } new_line_state;
-    
+
     // for font reencoding
-    std::vector<int32_t> cur_mapping; 
+    std::vector<int32_t> cur_mapping;
     std::vector<char*> cur_mapping2;
     std::vector<int> width_list; // width of each char
 

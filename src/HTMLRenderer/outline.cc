@@ -21,12 +21,15 @@ namespace pdf2htmlEX {
 
 using std::ostream;
 
-void HTMLRenderer::process_outline_items(GooList * items)
+    void HTMLRenderer::process_outline_items(GooList * items, bool toplevel)
 {
     if((!items) || (items->getLength() == 0))
         return;
 
-    f_outline.fs << "<ul>";
+    f_outline.fs << "<ul";
+    if (toplevel)
+        f_outline.fs << " class=\"mktree\"";
+    f_outline.fs << ">";
 
     for(int i = 0; i < items->getLength(); ++i)
     {
@@ -53,7 +56,7 @@ void HTMLRenderer::process_outline_items(GooList * items)
         item->open();
         if(item->hasKids())
         {
-            process_outline_items(item->getKids());
+            process_outline_items(item->getKids(), false);
         }
         item->close();
         f_outline.fs << "</li>";
@@ -61,14 +64,14 @@ void HTMLRenderer::process_outline_items(GooList * items)
 
     f_outline.fs << "</ul>";
 }
-   
+
 void HTMLRenderer::process_outline()
 {
     Outline * outline = cur_doc->getOutline();
     if(!outline)
         return;
 
-    process_outline_items(outline->getItems());
+    process_outline_items(outline->getItems(), true);
 }
 
 }// namespace pdf2htmlEX
